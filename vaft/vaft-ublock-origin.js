@@ -243,7 +243,7 @@ twitch-videoad.js text/javascript
                                                     }
                                                 }
                                                 var currentQualityLS = window.localStorage.getItem('video-quality');
-                                                lowQuality[qualityToSelect].click();
+                                                lowQuality[2].click();
                                                 settingsCog.click();
                                                 window.localStorage.setItem('video-quality', currentQualityLS);
                                                 if (e.data.value != null) {
