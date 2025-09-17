@@ -13,8 +13,8 @@ twitch-videoad.js text/javascript
         scope.ClientID = 'kimne78kx3ncx6brgo4mv6wki5h1ko';
         scope.ClientVersion = 'null';
         scope.ClientSession = 'null';
-        scope.PlayerType2 = 'embed'; //Source
-        scope.PlayerType3 = 'embed'; //Source
+        scope.PlayerType2 = 'site'; //Source
+        scope.PlayerType3 = 'site'; //Source
         scope.PlayerType4 = 'autoplay'; //360p
         scope.CurrentChannelName = null;
         scope.UsherParams = null;
@@ -468,9 +468,7 @@ twitch-videoad.js text/javascript
         if (streamInfo.EncodingsM3U8Cache[playerType].Resolution != resolutionInfo.Resolution ||
             streamInfo.EncodingsM3U8Cache[playerType].RequestTime < Date.now() - EncodingCacheTimeout) {
             console.log(`Blocking ads (type:${playerType}, resolution:${resolutionInfo.Resolution}, frameRate:${resolutionInfo.FrameRate}, qualityOverride:${qualityOverride})`);
-            postMessage({
-                    key: 'PauseResumePlayer'
-                });
+            setTimeout(postMessage({key: 'PauseResumePlayer'}), 500);
         }
         streamInfo.EncodingsM3U8Cache[playerType].RequestTime = Date.now();
         streamInfo.EncodingsM3U8Cache[playerType].Value = encodingsM3u8;
