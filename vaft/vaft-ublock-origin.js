@@ -463,13 +463,19 @@ twitch-videoad.js text/javascript
         }
         return matchedResolutionUrl ? matchedResolutionUrl : firstUrl;
     }
-    async function getStreamForResolution(streamInfo, resolutionInfo, encodingsM3u8, fallbackStreamStr, playerType, realFetch) {
-        var qualityOverride = null;
-        if (streamInfo.EncodingsM3U8Cache[playerType].Resolution != resolutionInfo.Resolution ||
-            streamInfo.EncodingsM3U8Cache[playerType].RequestTime < Date.now() - EncodingCacheTimeout) {
-            console.log(`Blocking ads (type:${playerType}, resolution:${resolutionInfo.Resolution}, frameRate:${resolutionInfo.FrameRate}, qualityOverride:${qualityOverride})`);
-            setTimeout(postMessage({key: 'PauseResumePlayer'}), 500);
+async function getStreamForResolution(streamInfo, resolutionInfo, encodingsM3u8, fallbackStreamStr, playerType, realFetch) {
+    var qualityOverride = null;
+    if (streamInfo.EncodingsM3U8Cache[playerType].Resolution != resolutionInfo.Resolution ||
+        streamInfo.EncodingsM3U8Cache[playerType].RequestTime < Date.now() - EncodingCacheTimeout) {
+        if (!streamInfo.pauseCallCount) {
+            streamInfo.pauseCallCount = 0;
         }
+        if (streamInfo.pauseCallCount >= 2) {
+            console.log(`Blocking ads (type:${playerType}, resolution:${resolutionInfo.Resolution}, frameRate:${resolutionInfo.FrameRate}, qualityOverride:${qualityOverride})`);
+            setTimeout(() => postMessage({key: 'PauseResumePlayer'}), 500);
+        }
+        streamInfo.pauseCallCount++;
+    }
         streamInfo.EncodingsM3U8Cache[playerType].RequestTime = Date.now();
         streamInfo.EncodingsM3U8Cache[playerType].Value = encodingsM3u8;
         streamInfo.EncodingsM3U8Cache[playerType].Resolution = resolutionInfo.Resolution;
