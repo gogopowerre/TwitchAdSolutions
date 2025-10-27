@@ -406,12 +406,10 @@ twitch-videoad.js text/javascript
         };
     }
     function getStreamUrlForResolution(encodingsM3u8, resolutionInfo, qualityOverrideStr) {
-    var qualityOverride = 20;
-    if (qualityOverrideStr && qualityOverrideStr.endsWith('p')) {
-        qualityOverride = qualityOverrideStr.substr(0, qualityOverrideStr.length - 1) | 0;
-    } else if (!qualityOverrideStr) {
-        qualityOverride = 20;
-    }
+        var qualityOverride = 0;
+        if (qualityOverrideStr && qualityOverrideStr.endsWith('p')) {
+            qualityOverride = qualityOverrideStr.substr(0, qualityOverrideStr.length - 1) | 0;
+        }
         var qualityOverrideFoundQuality = 0;
         var qualityOverrideFoundFrameRate = 0;
         var encodingsLines = encodingsM3u8.replace('\r', '').split('\n');
