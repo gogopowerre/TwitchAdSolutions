@@ -161,8 +161,8 @@ twitch-videoad.js text/javascript
                         if (adBlockDiv == null) {
                             adBlockDiv = getAdBlockDiv();
                         }
-                        //adBlockDiv.P.textContent = 'Blocking ads';
-                        //adBlockDiv.style.display = 'block';
+                        adBlockDiv.P.textContent = 'Blocking';
+                        adBlockDiv.style.display = 'block';
                     } else if (e.data.key == 'HideAdBlockBanner') {
                         if (adBlockDiv == null) {
                             adBlockDiv = getAdBlockDiv();
@@ -243,7 +243,7 @@ twitch-videoad.js text/javascript
                                                     }
                                                 }
                                                 var currentQualityLS = window.localStorage.getItem('video-quality');
-                                                lowQuality[1].click();
+                                                lowQuality[qualityToSelect].click();
                                                 settingsCog.click();
                                                 window.localStorage.setItem('video-quality', currentQualityLS);
                                                 if (e.data.value != null) {
