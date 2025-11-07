@@ -17,7 +17,7 @@ twitch-videoad.js text/javascript
             'site',//Source
             'autoplay'//360p
         ];
-        scope.FallbackPlayerType = 'embed';
+        scope.FallbackPlayerType = 'site';
         scope.ForceAccessTokenPlayerType = 'site';
         scope.SkipPlayerReloadOnHevc = false;// If true this will skip player reload on streams which have 2k/4k quality (if you enable this and you use the 2k/4k quality setting you'll get error #4000 / #3000 / spinning wheel on chrome based browsers)
         scope.AlwaysReloadPlayerOnAd = false;
@@ -187,7 +187,7 @@ twitch-videoad.js text/javascript
                             adBlockDiv = getAdBlockDiv();
                         }
                         if (adBlockDiv != null) {
-                            adBlockDiv.P.textContent = 'Blocking' + (e.data.isMidroll ? ' midroll' : '') + ' ads';
+                            adBlockDiv.P.textContent = 'Blocking';
                             adBlockDiv.style.display = 'block';
                         }
                     } else if (e.data.key == 'HideAdBlockBanner') {
