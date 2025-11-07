@@ -13,7 +13,6 @@ twitch-videoad.js text/javascript
         scope.AdSignifier = 'stitched';
         scope.ClientID = 'kimne78kx3ncx6brgo4mv6wki5h1ko';
         scope.BackupPlayerTypes = [
-            'embed',//Source
             'site',//Source
             'autoplay'//360p
         ];
