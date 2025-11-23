@@ -11,7 +11,7 @@ twitch-videoad.js text/javascript
     function declareOptions(scope) {
         // Options / globals
         scope.OPT_BACKUP_PLAYER_TYPES = [ 'embed' ];
-        scope.OPT_FORCE_ACCESS_TOKEN_PLAYER_TYPE = 'site';
+        scope.OPT_FORCE_ACCESS_TOKEN_PLAYER_TYPE = 'embed';
         scope.AD_SIGNIFIER = 'stitched-ad';
         scope.LIVE_SIGNIFIER = ',live';
         scope.CLIENT_ID = 'kimne78kx3ncx6brgo4mv6wki5h1ko';
@@ -578,7 +578,7 @@ twitch-videoad.js text/javascript
                 isVod: false,
                 vodID: "",
                 playerType: realPlayerType,
-                platform: realPlayerType == 'site' ? 'android' : 'web'
+                platform: realPlayerType == 'embed' ? 'android' : 'web'
             },
             extensions: {
                 persistedQuery: {
