@@ -10,7 +10,7 @@ twitch-videoad.js text/javascript
     window.twitchAdSolutionsVersion = ourTwitchAdSolutionsVersion;
     function declareOptions(scope) {
         // Options / globals
-        scope.OPT_BACKUP_PLAYER_TYPES = [ 'site' ];
+        scope.OPT_BACKUP_PLAYER_TYPES = [ 'site', 'embed' ];
         scope.OPT_FORCE_ACCESS_TOKEN_PLAYER_TYPE = 'site';
         scope.AD_SIGNIFIER = 'stitched-ad';
         scope.LIVE_SIGNIFIER = ',live';
