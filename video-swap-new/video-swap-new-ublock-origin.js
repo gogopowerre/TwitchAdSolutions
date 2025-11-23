@@ -578,7 +578,7 @@ twitch-videoad.js text/javascript
                 isVod: false,
                 vodID: "",
                 playerType: realPlayerType,
-                platform: realPlayerType == 'autoplay' ? 'android' : 'web'
+                platform: realPlayerType == 'site' ? 'android' : 'web'
             },
             extensions: {
                 persistedQuery: {
