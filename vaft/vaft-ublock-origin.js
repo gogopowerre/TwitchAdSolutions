@@ -14,7 +14,8 @@ twitch-videoad.js text/javascript
         scope.ClientID = 'kimne78kx3ncx6brgo4mv6wki5h1ko';
         scope.BackupPlayerTypes = [
             'site',//Source
-            'autoplay'//360p
+            'autoplay',//360p
+            'picture-by-picture-CACHED'//360p (-CACHED is an internal suffix and is removed)
         ];
         scope.FallbackPlayerType = 'site';
         scope.ForceAccessTokenPlayerType = 'site';// Replaces 'embed' player type with 'site' (to reduce prerolls when on embeded websites)
