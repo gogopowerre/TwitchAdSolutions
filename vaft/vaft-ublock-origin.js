@@ -16,7 +16,7 @@ twitch-videoad.js text/javascript
             'embed',//Source
             'popout',//Source
             'autoplay',//360p
-            //'picture-by-picture-CACHED'//360p (-CACHED is an internal suffix and is removed)
+            'picture-by-picture-CACHED'//360p (-CACHED is an internal suffix and is removed)
         ];
         scope.FallbackPlayerType = 'embed';
         scope.ForceAccessTokenPlayerType = 'popout';
@@ -758,7 +758,7 @@ twitch-videoad.js text/javascript
             }
             if (adBlockDiv != null) {
                 isActivelyStrippingAds = data.isStrippingAdSegments;
-                adBlockDiv.P.textContent = 'Blocking' + (data.isMidroll ? ' midroll' : '') + ' ads' + (data.isStrippingAdSegments ? ' (stripping)' : '');// + (data.numStrippedAdSegments > 0 ? ` (${data.numStrippedAdSegments})` : '');
+                adBlockDiv.P.textContent = 'Blocking' + (data.isStrippingAdSegments ? ' (stripping)' : '');// + (data.numStrippedAdSegments > 0 ? ` (${data.numStrippedAdSegments})` : '');
                 adBlockDiv.style.display = data.hasAds && playerBufferState.isLive ? 'block' : 'none';
             }
         }
