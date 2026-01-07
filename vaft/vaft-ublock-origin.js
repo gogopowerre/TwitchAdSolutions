@@ -21,7 +21,7 @@ twitch-videoad.js text/javascript
         scope.ForceAccessTokenPlayerType = 'popout';
         scope.SkipPlayerReloadOnHevc = false;// If true this will skip player reload on streams which have 2k/4k quality (if you enable this and you use the 2k/4k quality setting you'll get error #4000 / #3000 / spinning wheel on chrome based browsers)
         scope.AlwaysReloadPlayerOnAd = false;// Always pause/play when entering/leaving ads
-        scope.ReloadPlayerAfterAd = true;// After the ad finishes do a player reload instead of pause/play
+        scope.ReloadPlayerAfterAd = false;// After the ad finishes do a player reload instead of pause/play
         scope.PlayerReloadMinimalRequestsTime = 1500;
         scope.PlayerReloadMinimalRequestsPlayerIndex = 2;//autoplay
         scope.HasTriggeredPlayerReload = false;
